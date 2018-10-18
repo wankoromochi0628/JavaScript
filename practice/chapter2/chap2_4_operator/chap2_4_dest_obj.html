@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- 分割代入 -->
+        <script type="text/javascript">
+            // 配列の値を分割する
+            var obj = {firstName:'山田', lastName:'太郎', age:'25'};
+
+            var {firstName, lastName, age} = obj;
+            console.log('全部分割したパターン');
+            console.log(lastName);
+            console.log(firstName);
+            console.log(age);
+
+            // 苗字と名前の入れ替え
+            // [firstName, lastName] = [lastName, firstName];
+            // console.log('苗字と名前入れ替えた後');
+            // console.log(lastName);
+            // console.log(firstName);
+            // console.log(age);
+        </script>
+
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

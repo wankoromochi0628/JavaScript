@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- forin文  連想配列の要素を順に取り出す -->
+        <script type="text/javascript">
+            console.log('*****forin 連想配列の要素を順に取り出す*****');
+
+            var scale = {A:'ラ', B:'シ', C:'ド', D:'レ', E:'ミ', F:'ファ', G:'ソ'};
+            // 連想配列の先頭から順に「キー」を取り出す
+            for (var key in scale) {
+                console.log(scale[key]);
+            }
+        </script>
+
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- try catch文 例外処理 -->
+        <script type="text/javascript">
+            try{
+
+                var x = 10;
+                var y = 5;
+
+                console.log(num1 / num2);
+
+            } catch(e) {
+                console.log(">>>>>>> error from chap2_5");
+                console.log(">>>>>>> システム部に確認してください。");
+                console.log(e.message);
+            } finally {
+                console.log("処理終了");
+            }
+        </script>
+
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

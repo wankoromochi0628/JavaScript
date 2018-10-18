@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- 分割代入 -->
+        <script type="text/javascript">
+            // 配列の値を分割する
+            var array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+            var [a, b, c, d, e, f, g, h, i, j] = array;
+            console.log('全部分割したパターン');
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+            console.log(e);
+            console.log(f);
+            console.log(g);
+            console.log(h);
+            console.log(i);
+            console.log(j);
+        </script>
+
+        <script type="text/javascript">
+            // 配列の値を分割する
+            var array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+            var [a, b, c, d, e, ...z] = array;
+            console.log('50まで分割して残りをそのままパターン');
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+            console.log(e);
+            console.log(z);
+        </script>
+
+<!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

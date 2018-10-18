@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- switch文 多岐分岐 -->
+        <script type="text/javascript">
+            var rank = Math.floor(Math.random() * 5);
+            console.log('*****多岐分岐*****');
+
+            switch(rank) {
+                case 1 :
+                    console.log(rank + "位です。金メダルを受け取ってください。");
+                    break;
+                case 2 :
+                    console.log(rank + "位です。銀メダルを受け取ってください。");
+                    break;
+                case 3 :
+                    console.log(rank + "位です。銅メダルを受け取ってください。");
+                    break;
+                default :
+                    console.log("ランク外です。");
+                    break;
+            }
+        </script>
+
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

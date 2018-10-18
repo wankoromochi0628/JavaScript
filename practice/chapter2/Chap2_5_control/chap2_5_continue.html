@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- continue文 -->
+        <script type="text/javascript">
+            console.log('***** continue *****');
+            array = ['りんご', 'みかん', 'ぶどう', 'バナナ', 'もも'];
+
+            for (var i = 0; i < array.length; i++) {
+
+                // continue文 ももじゃない限り以降の処理を実行しない
+                if (array[i] !== 'もも') {
+                    console.log('これはももではありません。');
+                    continue;
+                }
+
+                // 実行されない処理
+                console.log('ももがありました！');
+            }
+        </script>
+
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

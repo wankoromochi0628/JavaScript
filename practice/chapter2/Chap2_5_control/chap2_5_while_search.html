@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- while文 繰り返し処理 -->
+        <script type="text/javascript">
+            var i = 1;
+            console.log('*****while 検索処理*****');
+            console.log("新発田さんは何番目にいますか");
+
+            var array = ["鈴木", "上本", "柴田", "上沼", "江口"];
+
+            // 継続条件 iが10以下の間繰り返す
+            while(array[i - 1] !== "柴田") {
+                i++;
+            }
+
+            console.log("柴田さんは" + i + "番目にいらっしゃいます。");
+        </script>
+
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

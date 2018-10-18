@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <title>2-02_tag</title>
+        <link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+        <title>JavaScript本格入門</title>
+    </head>
+    <body>
+        <!-- if文 単純分岐 -->
+        <script type="text/javascript">
+            var score = Math.floor(Math.random() * 101);
+            console.log('*****単純分岐*****');
+
+            if (score >= 70) {
+                console.log("点数は" + score + "点。合格です。");
+            } else {
+                console.log("点数は" + score + "点。不合格です。");
+            }
+        </script>
+
+        <!-- if文 多岐分岐 -->
+        <script type="text/javascript">
+            var score = Math.floor(Math.random() * 101);
+            console.log('*****多岐分岐*****');
+
+            if (score >= 70) {
+                console.log("点数は" + score + "点。合格です。");
+            } else if (score >= 30) {
+                console.log("点数は" + score + "点。再テストです。");
+            } else {
+                console.log("点数は" + score + "点。不合格です。");
+            }
+        </script>
+
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
+    </body>
+</html>

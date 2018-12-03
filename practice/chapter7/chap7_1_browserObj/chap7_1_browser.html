@@ -11,28 +11,11 @@
     </head>
     <body>
         <header class="nav">
-            <!-- ページ上部 -->
-            <div class="nav-left">
-                <span class="nav-item">
-                    <span class="fa fa-language"></span>一言SNS
-                </span>
-            </div>
-            <div class="nav-right">
-                <span class="nav-item">
-                <div class="control has-addons">
-                    <input class="input" type="search" name="search" placeholder="キーワード検索">
-                    <a class="button is-info"><i class="fa fa-search"></i>検索</a>
-                </div>
-                </span>
-                <span class="nav-item">
-                <a href="#" class="fa fa-user">ログイン</a>
-                </span>
-            </div>
             <!-- hero -->
             <div class="hero is-primary is-bold">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">いぬまみれ</h1>
+                        <h1 class="title">JavaScript　本格入門</h1>
                         <h2 class="subtitle">@y_suzuki</h2>
                     </div>
                 </div>
@@ -63,25 +46,28 @@
                 いぬの気持ち
                 </aside>
             　　<aside class="box">
-                    さちまるはけつの匂いをかぐ
+                    クライアントサイド JavaScript開発を極める
                 </aside>
                 <aside class="box menu">
                     <p class="menu-label">
-                    おすすめの一言
+                    メンバー
                     </p>
                     <ul class="menu-list">
-                        <li><a href="#">さちまる<small>@sachi-kichi</small></a></li>
-                        <li><a href="#">ゆとまる<small>@yunyun</small></a></li>
-                        <li><a href="#">いぬまる<small>@snoopy</small></a></li>
+                        <li><a href="#">上本<small>@a1008u</small></a></li>
+                        <li><a href="#">江口<small>@egg_cheese</small></a></li>
+                        <li><a href="#">上沼<small>@kami_numa</small></a></li>
+                        <li><a href="#">柴田<small>@sibata</small></a></li>
+                        <li><a href="#">鈴木<small>@suzuki_1</small></a></li>
+                        <li><a href="#">鈴木<small>@suzuki_2</small></a></li>
                     </ul>
                     <p class="menu-label">
                         キーワード
                     </p>
                     <ul class="menu-list">
-                        <li><a href="#">ピーナッツ</a></li>
-                        <li><a class="is-active" href="#">いぬの家族</a>
+                        <li><a href="#">目次</a></li>
+                        <li><a class="is-active" href="#">ブラウザーオブジェクトで知っておきたい基本機能</a>
                             <ul>
-                            <li><a href="#">スパイク</a></li>
+                            <li><a href="#">確認ダイアログ</a></li>
                             <li><a href="#">アンディ</a></li>
                             <li><a href="#">ベル</a></li>
                             <li><a href="#">オラフ</a></li>
@@ -99,26 +85,27 @@
                 <article class="box media">
                     <figure class="media-left">
                         <p class="image is-64x64">
-                            <img src="sunu-pi-.bmp">
+                            <img src="javascript_logo.png">
                         </p>
                     </figure>
                     <div class="media-content">
                         <div class="content">
-                            <p><strong>snoopy</strong><br>
-                                （恋ってのはただ考えるだけでもわざわいのもとになりかねないね！）<br>
-                                <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+                            <p><strong>確認ダイアログを表示する - confirmメソッド -</strong><br>
+                                以前登場したalertメソッドがメッセージを表示するだけなのに対し、<br>
+                                ユーザーに何かしらの意思表示を求めるダイアログを表示するメソッド。<br>
+                                <small><a href="#" onclick="reload();">Play</a></small>
                             </p>
                         </div>
                         <article class="media">
                             <figure class="media-left">
                                 <p class="image is-48x48">
-                                    <img src="huHhg6TQ_400x400.jpeg">
+                                    <img src="icon_114770_256.jpg">
                                 </p>
                             </figure>
                             <div class="media-content">
                                 <div class="content">
-                                <p><strong>Charlie Brown</strong><br>
-                                    一目惚れなんて２秒あれば十分さ！<br>
+                                <p><strong>補足</strong><br>
+                                    補足あれば記入<br>
                                     <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                 </p>
                                 </div>
@@ -129,13 +116,16 @@
                     <article class="box media">
                     <figure class="media-left">
                         <p class="image is-48x48">
-                            <img src="Faron.jpg">
+                            <img src="javascript_logo.png">
                         </p>
                     </figure>
                     <div class="media-content">
                         <div class="content">
-                            <p><strong>FaronFaron</strong><br>
-                            ・・・・・・・・・・・<br>
+                            <p><strong>タイマー機能を実装する - setInterval/setTimeoutメソッド -</strong><br>
+                            「一定時間ごとに、あるいは一定時間が経過した後に何らかの処理を行いたい。」<br>
+                            という場合に使用するメソッド。<br>
+                            <input id="btn" type="button" value=" タイマー停止" />
+                            <div id="result"></div>
                             <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
@@ -144,6 +134,7 @@
             </div>
         </main>
 
+        <script type="text/javascript" src="chap7_1_browser.js"></script>
         <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
         <noscript>JavaScriptが利用できません。</noscript>
     </body>

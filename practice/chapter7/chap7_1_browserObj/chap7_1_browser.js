@@ -9,7 +9,10 @@ function reload() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // タイマー設置
+    // setInterval : 一定間隔ごとに処理を実行
+    // setTimeout : 時間経過で一回のみ実行
     var timer = window.setInterval(
+    // var timer = window.setTimeout(
         // 現在の時刻を<div id='result'>要素に表示 (5000ミリ秒ごとに更新)
         function() {
             var dat = new Date();

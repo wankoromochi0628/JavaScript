@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="IE=edge">
-        <title>2-02_tag</title>
+        <link rel="shortcut icon" href="../img/javascript_logo.ico">
+        <title>JavaScript 本格入門</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     </head>
@@ -23,7 +24,11 @@
         </header>
 
         <section class="level">
-            <div class="level-left"></div>
+            <div class="level-left">
+                <div class="level-item">
+                    <a class="button is-light" href="../chap7_1_browserObj/chap7_1_browser.html">Prev</a>
+                </div>
+            </div>
             <div class="level-right">
                 <div class="level-item tabs">
                 <ul>
@@ -69,7 +74,7 @@
                         <li><a class="is-active" href="#">ブラウザーオブジェクトで知っておきたい基本機能</a>
                             <ul>
                             <li><a href="#1">locationオブジェクト</a></li>
-                            <li><a href="#2">setInterval/setTimeoutメソッド</a></li>
+                            <li><a href="#2">hrefプロパティの実践</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -85,9 +90,10 @@
                     </figure>
                     <div class="media-content">
                         <div class="content" id="1">
-                            <p><strong>表示ページのアドレス情報を取得 - locationオブジェクト -</strong><br>
-                                以前登場したalertメソッドがメッセージを表示するだけなのに対し、<br>
-                                ユーザーに何かしらの意思表示を求めるダイアログを表示するメソッド。<br>
+                            <p><strong>表示ページのアドレス情報を取得／操作 - locationオブジェクト -</strong><br>
+                                ボタンをクリックするなどの動作で、別ページに遷移したり、現在のページをリロードしたい<br>
+                                というような場合に利用するメソッド。<br><br>
+                                ※「補足」欄にlocationオブジェクトで利用可能なプロパティ／メソッドを記載。<br>
                                 <small><a href="#" onclick="reload();">Play</a></small>
                             </p>
                         </div>
@@ -99,8 +105,151 @@
                             </figure>
                             <div class="media-content">
                                 <div class="content">
-                                <p><strong>補足</strong><br>
-                                    補足あれば記入<br>
+                                <p><strong>hash</strong><br>
+                                    概要 : アンカー名（#〜）<br>
+                                    戻り値の例　:  #gihyo?id=12345<br>
+                                    <small><a>http://www.wings.msn.to:8080/js/sample.html<font color="red"/>#gihyo?id=12345</font></a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>host</strong><br>
+                                    概要 : ホスト（ホスト名+ポート番号。80の場合、ポート番号は省略。<br>
+                                    戻り値の例　:  wwww.wings.msn.to:8080<br>
+                                    <small><a>http://<font color="red"/>www.wings.msn.to:8080</font>/js/sample.html#gihyo?id=12345</a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>hostName</strong><br>
+                                    概要 : ホスト名<br>
+                                    戻り値の例　:  wwww.wings.msn.to<br>
+                                    <small><a>http://<font color="red"/>www.wings.msn.to</font>:8080/js/sample.html#gihyo?id=12345</a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>href</strong><br>
+                                    概要 : リンク先<br>
+                                    戻り値の例　:  http://www.wings.msn.to:8080/js/sample.html#gihyo?id=12345<br>
+                                    <small><a><font color="red">http://www.wings.msn.to:8080/js/sample.html#gihyo?id=12345</font></a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>pathname<font color="red">(読み取り専用)</font></strong><br>
+                                    概要 : パス名<br>
+                                    戻り値の例　:  js/sample.html<br>
+                                    <small><a>http://www.wings.msn.to:8080/<font color="red">js/sample.html</font>#gihyo?id=12345</a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>port<font color="red">(読み取り専用)</font></strong><br>
+                                    概要 : ポート番号<br>
+                                    戻り値の例　:  8080<br>
+                                    <small><a>http://www.wings.msn.to:<font color="red">8080</font>/js/sample.html#gihyo?id=12345</a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>protocol<font color="red">(読み取り専用)</font></strong><br>
+                                    概要 : プロトコル<br>
+                                    戻り値の例　:  http:<br>
+                                    <small><a><font color="red">http:</font>//www.wings.msn.to:8080/js/sample.html#gihyo?id=12345</a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>search</strong><br>
+                                    概要 : クエリ情報<br>
+                                    戻り値の例　:  ?id=12345<br>
+                                    <small><a>http://www.wings.msn.to:8080/js/sample.html#gihyo<font color="red">?id=12345</font></a></small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>reload()</strong><br>
+                                    概要 : 現在ページを再読み込み<br>
+                                    <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p><strong>replace()</strong><br>
+                                    概要 : 指定ページurlに移動<br>
                                     <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                 </p>
                                 </div>
@@ -116,10 +265,12 @@
                     </figure>
                     <div class="media-content">
                         <div class="content" id="2">
-                            <p><strong>タイマー機能を実装する - setInterval/setTimeoutメソッド -</strong><br>
-                            「一定時間ごとに、あるいは一定時間が経過した後に何らかの処理を行いたい。」<br>
-                            という場合に使用するメソッド。<br>
-                            <input id="btn" type="button" value=" タイマー停止" />
+                            <p><strong>hrefプロパティの実践</strong><br>
+                            <select id="number" name="number">
+                                <option value="">---遷移ページを選択してください---</option>
+                                <option value="chap7_1_location/chap7_1_browser.html">1ページ</option>
+                            </select><br>
+                            <input id="btn" type="button" value=" 移動" />
                             <div id="result"></div>
                             <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
@@ -132,9 +283,11 @@
                             </figure>
                             <div class="media-content">
                                 <div class="content">
-                                <p><strong>補足</strong><br>
-                                    setInterval : 指定された時間ごとに処理を繰り返す。<br>
-                                    setTimeout : 指定された時間が経過したタイミングで処理を実行する。<br>
+                                <p><strong>動的にアドレスを変更</strong><br>
+                                    今回の例で言うと<br>
+                                    <font color="red">file:///Users/y_suzuki/development/JavaScript/practice/chapter7/</font><br>
+                                    までの固定文字列の末尾に、リストボックスで選択された値を<br>
+                                    動的に付与してlocation.hrefプロパティに渡して画面遷移している。<br>
                                     <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                 </p>
                                 </div>

@@ -60,7 +60,7 @@
                     </p>
                     <ul class="menu-list">
                         <li><a href="#">上本<small>@a1008u</small></a></li>
-                        <li><a href="#">江口<small>@egg_cheese</small></a></li>
+                        <li><a href="#">江口<small>@eguchi</small></a></li>
                         <li><a href="#">上沼<small>@kami_numa</small></a></li>
                         <li><a href="#">柴田<small>@sibata</small></a></li>
                         <li><a href="#">鈴木<small>@suzuki_1</small></a></li>
@@ -75,6 +75,7 @@
                             <ul>
                             <li><a href="#1">locationオブジェクト</a></li>
                             <li><a href="#2">hrefプロパティの実践</a></li>
+                            <li><a href="#3">historyオブジェクト</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -258,47 +259,115 @@
                     </div>
                     </article>
                     <article class="box media">
-                    <figure class="media-left">
-                        <p class="image is-48x48">
-                            <img src="../img/javascript_logo.png">
-                        </p>
-                    </figure>
-                    <div class="media-content">
-                        <div class="content" id="2">
-                            <p><strong>hrefプロパティの実践</strong><br>
-                            <select id="number" name="number">
-                                <option value="">---遷移ページを選択してください---</option>
-                                <option value="chap7_1_location/chap7_1_browser.html">1ページ</option>
-                            </select><br>
-                            <input id="btn" type="button" value=" 移動" />
-                            <div id="result"></div>
-                            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                        <figure class="media-left">
+                            <p class="image is-48x48">
+                                <img src="../img/javascript_logo.png">
                             </p>
-                        </div>
-                        <article class="media">
-                            <figure class="media-left">
-                                <p class="image is-48x48">
-                                    <img src="../img/icon_114780_256.jpg">
-                                </p>
-                            </figure>
-                            <div class="media-content">
-                                <div class="content">
-                                <p><strong>動的にアドレスを変更</strong><br>
-                                    今回の例で言うと<br>
-                                    <font color="red">file:///Users/y_suzuki/development/JavaScript/practice/chapter7/</font><br>
-                                    までの固定文字列の末尾に、リストボックスで選択された値を<br>
-                                    動的に付与してlocation.hrefプロパティに渡して画面遷移している。<br>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content" id="2">
+                                <p><strong>hrefプロパティの実践</strong><br>
+                                    <div class='control'>
+                                    <div class='select'>
+                                        <select id="number" name="number">
+                                            <option value="">---遷移ページを選択してください---</option>
+                                            <option value="chap7_1_browserObj/chap7_1_browser.html">1ページ</option>
+                                        </select>
+                                    </div>
+                                    </div><br>
+                                    <button class="button is-primary" id="btn" type="button" >移動</button><br>
                                     <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                 </p>
-                                </div>
                             </div>
-                        </article>
-                    </div>
-                </article>
-            </div>
-        </main>
-
-        <script type="text/javascript" src="chap7_1_browser.js"></script>
+                            <article class="media">
+                                <figure class="media-left">
+                                    <p class="image is-48x48">
+                                        <img src="../img/icon_114780_256.jpg">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p><strong>動的にアドレスを変更</strong><br>
+                                            今回の例で言うと<br>
+                                            <font color="red">file:///Users/y_suzuki/development/JavaScript/practice/chapter7/</font><br>
+                                            までの固定文字列の末尾に、リストボックスで選択された値を<br>
+                                            動的に付与してlocation.hrefプロパティに渡して画面遷移している。<br>
+                                            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </article>
+                    <article class="box media">
+                        <figure class="media-left">
+                            <p class="image is-48x48">
+                                <img src="../img/javascript_logo.png">
+                            </p>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content" id="3">
+                                <p><strong>履歴に沿ってページを前後に移動する - historyオブジェクト - </strong><br>
+                                    ブラウザのページ遷移の履歴を管理しているhistoryオブジェクトを利用すると、<br>
+                                    ページの履歴を遡ったりまたは先に進むことができる。<br>
+                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                </p>
+                            </div>
+                            <article class="media">
+                                <figure class="media-left">
+                                    <p class="image is-48x48">
+                                        <img src="../img/icon_114780_256.jpg">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p><strong>back/forwardメソッド</strong><br>
+                                            <font color="red">history.backメソッド</font>：履歴上の<font color="red">前</font>ページへ遷移する。<br>
+                                            <font color="red">history.forwardメソッド</font>：履歴上の<font color="red">後</font>ページへ遷移する。<br>
+                                            <a href="JavaScript:history.back()">戻る</a>|
+                                            <a href="JavaScript:history.forward()">進む</a><br>
+                                            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </article>
+                    <article class="box media">
+                        <figure class="media-left">
+                            <p class="image is-48x48">
+                                <img src="../img/javascript_logo.png">
+                            </p>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content" id="4">
+                                <p><strong>JavaScriptによる操作をブラウザーの履歴に残す - pushStateメソッド -</strong><br>
+                                    例えばページを更新した時に、更新後の状態を保持したいという場合に利用できる。<br>
+                                    JavaScriptから任意のタイミングで履歴を追加することが可能。<br>
+                                    <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                </p>
+                            </div>
+                            <article class="media">
+                                <figure class="media-left">
+                                    <p class="image is-48x48">
+                                        <img src="../img/icon_114780_256.jpg">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p><strong>カウントアップ回数を履歴に残す</strong><br>
+                                            <button class="button is-primary" id="cnt" type="button">カウントアップ</button><br>
+                                            <span id="result">-</span>回クリックされました。<br>
+                                            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </article>
+                </div>
+            </main>
+        <script type="text/javascript" src="chap7_2_location.js"></script>
         <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
         <noscript>JavaScriptが利用できません。</noscript>
     </body>

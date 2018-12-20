@@ -46,4 +46,21 @@ document.getElementById('timer').addEventListener('click', function() {
     console.time('MyTimer');
     window.alert('確認してください。');
     console.timeEnd('MyTimer');
-})
+});
+
+// dir
+document.getElementById('dir1').addEventListener('click', function() {
+    console.log('--- log ---');
+    console.log(window);
+    console.log('--- dir ---');
+    console.dir(window);
+});
+
+document.getElementById('dir2').addEventListener('click', function() {
+    var d = document.getElementById('pic');
+
+    console.log('--- log ---');
+    console.log(d);
+    console.log('--- dir ---');
+    console.dir(d);
+});

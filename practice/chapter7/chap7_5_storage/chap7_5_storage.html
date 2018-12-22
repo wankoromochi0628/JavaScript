@@ -17,7 +17,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">JavaScript　本格入門</h1>
-                        <h2 class="subtitle">知っておくと便利なログメソッド</h2>
+                        <h2 class="subtitle">ユーザーデータを保存する - Storageオブジェクト -</h2>
                         <h2 class="subtitle">@y_suzuki</h2>
                     </div>
                 </div>
@@ -27,9 +27,8 @@
         <section class="level">
             <div class="level-left">
                 <div class="level-item">
-                    <a class="button is-light" href="chap7_4_console.html">Prev</a>
-                </div>
-            </div>
+                    <a class="button is-light" href="../chap7_4_console/chap7_4_utility.html">Prev</a>
+                </div></div>
             <div class="level-right">
                 <div class="level-item tabs">
                 <ul>
@@ -41,7 +40,7 @@
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <a class="button is-link" href="../chap7_5_storage/chap7_5_storage.html">Next</a>
+                    <a class="button is-link" href="/chap7_4_utility.html">Next</a>
                 </div>
             </div>
         </section>
@@ -72,9 +71,9 @@
                     </p>
                     <ul class="menu-list">
                         <li><a href="#">目次</a></li>
-                        <li><a class="is-active" href="#">知っておくと便利なログメソッド</a>
+                        <li><a class="is-active" href="#">ユーザーデータを保存する - Storageオブジェクト -</a>
                             <ul>
-                            <li><a href="#1">一般的なログ - logメソッド -</a></li>
+                            <li><a href="#1">ストレージにデータを保存/取得する</a></li>
                             <li><a href="#2">一般的な情報 - infoメソッド -</a></li>
                             <li><a href="#3">警告を表示 - warnメソッド -</a></li>
                             <li><a href="#4">エラーを表示 - errorメソッド -</a></li>
@@ -94,13 +93,49 @@
                     </figure>
                     <div class="media-content">
                         <div class="content" id="1">
-                            <p><strong>ログをグループ化する - group/groupEndメソッド -</strong><br>
-                                groupメソッドを呼び出してからgroupEndメソッドを呼び出すまでのログを<br>
-                                グループ化することができる。入れ子にすることも可能。<br><br>
-                                <button class="button is-link" id="group" type="button">ログ</button><br><br>
+                            <p><strong>ユーザーデータを保存する</strong><br>
+                                JavaScriptでは、原則的にスクリプトからユーザーのコンピューター内のファイルを<br>
+                                操作することはできない。<br>
+                                その代替手段として<b>クッキー（Cookie）</b>や<b>ストレージ（Web Storage）</b>などが利用できる。<br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p><strong>クッキーとストレージの違い</strong><br><br>
+                                        <table is-bordered is-striped is-narrow is-hoverable is-fullwidth>
+                                            <tr>
+                                                <td><b>項目</b></td>
+                                                <td><b>ストレージ</b></td>
+                                                <td><b>クッキー</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>データサイズの上限</td>
+                                                <td>大きい（5MB）</td>
+                                                <td>小さい（4KB）</td>
+                                            </tr>
+                                            <tr>
+                                                <td>データの有効期限</td>
+                                                <td>なし</td>
+                                                <td>あり</td>
+                                            </tr>
+                                            <tr>
+                                                <td>データ通信</td>
+                                                <td>発生しない</td>
+                                                <td>リクエストの都度、サーバーにも送信</td>
+                                            </tr>
+                                        </table>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </article>
                 <article class="box media">
@@ -111,10 +146,14 @@
                     </figure>
                     <div class="media-content">
                         <div class="content" id="1">
-                            <p><strong>ログをグループ化する - groupCollapsedメソッド -</strong><br>
-                                groupメソッドと基本的に同じだが、出力されたログを折りたたんだ状態で<br>
-                                表示する。<br><br>
-                                <button class="button is-link" id="collapse" type="button">ログ</button><br><br>
+                            <p><strong>ストレージにデータを保存/取得する</strong><br>
+                                ストレージは<b>ローカルストレージ(Local Storage）</b>と<b>セッションストレージ（Session Storage）</b><br>
+                                とに分類され、それぞれlocalStorage/sessionStorageプロパティでアクセスできる。<br><br>
+                                <input class="input" type="text1" placeholder="ストレージに保存するテキスト1" id="text"><br>
+                                <input class="input" type="text2" placeholder="ストレージに保存するテキスト2" id="text"><br>
+                                <input class="input" type="text3" placeholder="ストレージに保存するテキスト3" id="text"><br><br>
+                                <button class="button is-link" id="save" type="button">保存</button>
+                                <button class="button is-link is-outlined" id="out" type="button">取得</button><br><br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
@@ -193,7 +232,7 @@
             </div>
         </main>
 
-        <script type="text/javascript" src="chap7_4_utility.js"></script>
+        <script type="text/javascript" src="chap7_5_storage.js"></script>
         <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
         <noscript>JavaScriptが利用できません。</noscript>
     </body>

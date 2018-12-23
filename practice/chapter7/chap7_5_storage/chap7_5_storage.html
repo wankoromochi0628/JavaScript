@@ -149,14 +149,62 @@
                             <p><strong>ストレージにデータを保存/取得する</strong><br>
                                 ストレージは<b>ローカルストレージ(Local Storage）</b>と<b>セッションストレージ（Session Storage）</b><br>
                                 とに分類され、それぞれlocalStorage/sessionStorageプロパティでアクセスできる。<br><br>
-                                <input class="input" type="text1" placeholder="ストレージに保存するテキスト1" id="text"><br>
-                                <input class="input" type="text2" placeholder="ストレージに保存するテキスト2" id="text"><br>
-                                <input class="input" type="text3" placeholder="ストレージに保存するテキスト3" id="text"><br><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト1" id="text1"><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト2" id="text2"><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト3" id="text3"><br><br>
                                 <button class="button is-link" id="save" type="button">保存</button>
                                 <button class="button is-link is-outlined" id="out" type="button">取得</button><br><br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p><strong>ローカルストレージとセッションストレージの違い</strong><br><br>
+                                        <b>ローカルストレージ：</b>オリジン単位でデータを管理。ウィンドウ／タブを<br>
+                                        またいでデータの共有が可能で、ブラウザを閉じてもデータは維持される。<br><br>
+                                        <b>セッションストレージ：</b>現在のセッション（＝ブラウザが開いている間）でのみ<br>
+                                        維持されるデータを管理。ブラウザを閉じたタイミングでデータは破棄され、<br>
+                                        ウィンドウ／タブ間でデータを共有することもできない。<br><br>
+                                        <font color="red">
+                                            ※ローカルストレージは以下のような問題がある。<br>
+                                            ・明示的にデータを削除しない限り、データが消えない。（＝ゴミがたまりやすい）<br>
+                                            ・同一のオリジンで複数のアプリを稼働している場合、変数名が衝突しやすい。<br>
+                                        </font>
+                                        そのため、可能であるならセッションストレージを優先的に利用することが望ましい。<br>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p><strong>オリジンとは</strong><br><br>
+                                        オリジンとは「http://www.wings.msn.to.8080/」のように「スキーマ://ホスト名:<br>
+                                        ポート番号」の組み合わせで表せる単位のこと。<br><br>
+                                        例：<br>
+                                        (a) <b>http://www.example.jp/index.html</b>と比較して<br>
+                                        (b) <b>http://www.example.jp:80/request.php</b>は<font color='red'>同一オリジン</font><br>
+                                        (c) <b>https://www.example.jp/index.html</b>はスキーマが違うため<font color="blue">別オリジン</font><br>
+                                        (d) <b>http://img.example.jp/flower.jpg</b>はホスト名が違うため<font color="blue">別オリジン</font><br>
+                                        (e) <b>http://www.example.jp:8080/index.html</b>はポート番号が違うため<font color="blue">別オリジン</font><br>
+                                        となる。<br>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </article>
                 <article class="box media">

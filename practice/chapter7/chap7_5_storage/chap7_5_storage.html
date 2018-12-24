@@ -73,10 +73,10 @@
                         <li><a href="#">目次</a></li>
                         <li><a class="is-active" href="#">ユーザーデータを保存する - Storageオブジェクト -</a>
                             <ul>
-                            <li><a href="#1">ストレージにデータを保存/取得する</a></li>
-                            <li><a href="#2">一般的な情報 - infoメソッド -</a></li>
-                            <li><a href="#3">警告を表示 - warnメソッド -</a></li>
-                            <li><a href="#4">エラーを表示 - errorメソッド -</a></li>
+                            <li><a href="#1">ユーザーデータを保存する</a></li>
+                            <li><a href="#2">ストレージにデータを保存/取得する</a></li>
+                            <li><a href="#3">ストレージのデータを削除する</a></li>
+                            <li><a href="#4">ストレージから全てのデータを取り出す</a></li>
                             <li><a href="#5">その他のメソッド</a></li>
                             </ul>
                         </li>
@@ -145,7 +145,7 @@
                         </p>
                     </figure>
                     <div class="media-content">
-                        <div class="content" id="1">
+                        <div class="content" id="2">
                             <p><strong>ストレージにデータを保存/取得する</strong><br>
                                 ストレージは<b>ローカルストレージ(Local Storage）</b>と<b>セッションストレージ（Session Storage）</b><br>
                                 とに分類され、それぞれlocalStorage/sessionStorageプロパティでアクセスできる。<br><br>
@@ -163,7 +163,7 @@
                                     <img src="../img/icon_114780_256.jpg">
                                 </p>
                             </figure>
-                            <div class="media-content">
+                            <div class="media-content" id="2_1">
                                 <div class="content">
                                     <p><strong>ローカルストレージとセッションストレージの違い</strong><br><br>
                                         <b>ローカルストレージ：</b>オリジン単位でデータを管理。ウィンドウ／タブを<br>
@@ -214,10 +214,15 @@
                         </p>
                     </figure>
                     <div class="media-content">
-                        <div class="content" id="1">
-                            <p><strong>特定のコードが何度実行されたかをカウントする - countメソッド -</strong><br>
-                                特定の行が処理の中で何回呼び出されたかを出力する。<br><br>
-                                <button class="button is-link" id="count" type="button">ログ</button><br><br>
+                        <div class="content" id="3">
+                            <p><strong>ストレージのデータを削除する</strong><br>
+                                既存のデータを削除するには<b>removeItemメソッド</b>、または<b>delete演算子</b>を<br>
+                                利用する。<br>
+                                全てのデータを破棄するなら<b>clearメソッド</b>を利用しても良い。<br><br>
+                                <button class="button is-danger" id="remove" type="button">remove</button>
+                                <button class="button is-danger is-outlined" id="delete" type="button">delete</button>
+                                <button class="button is-dark is-outlined" id="clear" type="button">clear</button>
+                                <br><br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
@@ -230,28 +235,11 @@
                         </p>
                     </figure>
                     <div class="media-content">
-                        <div class="content" id="1">
-                            <p><strong>スクリプトの実行時間を計測する - timer/timerEndメソッド -</strong><br>
-                                timerメソッドを呼び出してからtimerEndメソッドを呼び出すまでの実行時間を<br>
-                                計測して出力する。<br><br>
-                                <button class="button is-link" id="timer" type="button">ログ</button><br><br>
-                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                            </p>
-                        </div>
-                    </div>
-                </article>
-                <article class="box media">
-                    <figure class="media-left">
-                        <p class="image is-64x64">
-                            <img src="../img/javascript_logo.png">
-                        </p>
-                    </figure>
-                    <div class="media-content">
-                        <div class="content" id="1">
-                            <p><strong>オブジェクトを見やすい形式で出力する - dirメソッド -</strong><br>
-                                <b>dirメソッド</b>を利用することで、オブジェクトの内容を人間にとって<br>
-                                見やすい形式で出力することができる。<br><br>
-                                <button class="button is-link" id="dir1" type="button">ログ</button><br><br>
+                        <div class="content" id="4">
+                            <p><strong>ストレージから全てのデータを取り出す</strong><br>
+                                for文を使って、ストレージの内容を全て取り出すことができる。<br><br>
+                                <button class="button is-link" id="all" type="button">取得</button>
+                                <br><br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
@@ -263,18 +251,56 @@
                             </figure>
                             <div class="media-content">
                                 <div class="content">
-                                    <p><strong>dirメソッドでElementオブジェクトを出力する</strong><br>
-                                        <b>logメソッド</b>はHTML形式で出力するのに対し、<br>
-                                        <b>dirメソッド</b>はオブジェクトツリーで出力する。<br><br>
-                                        <button class="button is-link" id="dir2" type="button">ログ</button><br>
-                                        <div id='pic'>
-                                            <img src="../img/icon_114780_256.jpg">
-                                        </div>
+                                    <p><strong>ローカルストレージとセッションストレージの違い</strong><br><br>
+                                        上記<a href="#2">「ストレージにデータを保存/取得する」</a>はconsole.logを<br>
+                                        storageのデータ分記載しているため、データ量が多くなった場合こちらの方がコード量を削減できる。<br><br>
                                         <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                     </p>
                                 </div>
                             </div>
                         </article>
+                    </div>
+                </article>
+                <article class="box media">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img src="../img/javascript_logo.png">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content" id="5">
+                            <p><strong>ストレージにオブジェクトを保存／取得する</strong><br>
+                                ストレージには文字列型で保存することが前提だが、<a href="#2_1">前述の名前衝突問題</a>のこともあるため<br>
+                                １つのアプリで使用するデータは１つのオブジェクトに収めてしまうのが望ましい。<br><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト1" id="obj1"><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト2" id="obj2"><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト3" id="obj3"><br><br>
+                                <button class="button is-link" id="objSave" type="button">保存</button>
+                                <button class="button is-link is-outlined" id="objOut" type="button">取得</button><br><br>
+                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <article class="box media">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img src="../img/javascript_logo.png">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content" id="6">
+                            <p><strong>ストレージにオブジェクトを保存／取得する</strong><br>
+                                ストレージには文字列型で保存することが前提だが、<a href="#2_1">前述の名前衝突問題</a>のこともあるため<br>
+                                １つのアプリで使用するデータは１つのオブジェクトに収めてしまうのが望ましい。<br><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト1" id="obj1"><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト2" id="obj2"><br>
+                                <input class="input" type="text" placeholder="ストレージに保存するテキスト3" id="obj3"><br><br>
+                                <button class="button is-link" id="objSave" type="button">保存</button>
+                                <button class="button is-link is-outlined" id="objOut" type="button">取得</button><br><br>
+                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                            </p>
+                        </div>
                     </div>
                 </article>
             </div>

@@ -72,4 +72,6 @@ document.getElementById('objOut').addEventListener('click', function(){
     console.dir(data);
     console.log('--- オブジェクト内のデータ ---');
     console.log(data.item1);
+    console.log(data.item2);
+    console.log(data.item3);
 });

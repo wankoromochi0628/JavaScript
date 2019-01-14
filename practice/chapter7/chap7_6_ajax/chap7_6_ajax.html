@@ -40,7 +40,7 @@
             </div>
             <div class="level-right">
                 <div class="level-item">
-                    <a class="button is-link" href="../chap7_6_ajax/chap7_6_ajax.html">Next</a>
+                    <a class="button is-link" href="../chap7_6_ajax/chap7_6_php/chap7_6_hatenaBm/chap7_6_hatenaBm.html">Next</a>
                 </div>
             </div>
         </section>
@@ -75,8 +75,8 @@
                             <li><a href="#1">Ajaxとは</a></li>
                             <li><a href="#2">Ajaxの利点</a></li>
                             <li><a href="#3">Ajaxアプリ実装の基本的な手順</a></li>
-                            <li><a href="#1">Ajaxとは</a></li>
-                            <li><a href="#1">Ajaxとは</a></li>
+                            <li><a href="#4">AjaxでWebAPIを呼び出す</a></li>
+                            <li><a href="#5">Ajaxとは</a></li>
                             <li><a href="#1">Ajaxとは</a></li>
                             <li><a href="#1">Ajaxとは</a></li>
                             </ul>
@@ -150,9 +150,9 @@
                             <p><strong>Ajaxの利点</strong><br>
                                 <strong>(1)操作性の改善</strong><br>
                                 ・通信ごとに発生していたページのチラつきを解消<br>
-                                ・サーバーが処理中もクライアント側では処理を継続できる<br><br>
+                                ・サーバー処理中もクライアント側では処理を継続できる<br><br>
                                 <strong>(2)パフォーマンスの向上</strong><br>
-                                ・ページの必要な部分だけを更新するので、通信料を最小限に抑えられる<br>
+                                ・ページの必要な部分だけを更新するので、通信量を最小限に抑えられる<br>
                                 ・サーバーの処理終了を待つ必要がないので、そもそもの体感速度が向上する<br><br>
                                 <strong>(3)開発生産性／運用性の向上</strong><br>
                                 ・リッチなユーザーインターフェイスをブラウザー標準の技術だけで構築できる（新たな技術を習得<br>
@@ -172,30 +172,145 @@
                     <div class="media-content">
                         <div class="content" id="3">
                             <p><strong>Ajaxアプリ実装の基本的な手順</strong><br>
-                                <strong>・XMLHttpRequestオブジェクトを生成</strong><br><br>
-                                <strong>・サーバー通信時の処理を定義</strong><br><br>
-                                <strong>・非同期通信を開始</strong><br><br>
+                                <strong>①XMLHttpRequestオブジェクトを生成</strong><br><br>
+                                <strong>②サーバー通信時の処理を定義</strong><br><br>
+                                <strong>③非同期通信を開始</strong><br><br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
                     </div>
                 </article>
                 <article class="box media">
-                        <figure class="media-left">
-                            <p class="image is-64x64">
-                                <img src="../img/javascript_logo.png">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img src="../img/javascript_logo.png">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content" id="4">
+                            <p><strong>AjaxでWebAPIを呼び出す</strong><br>
+                                <input class="input" type="text" placeholder="非同期を体感するためのダミー" id="txtDummy"><br>
+                                <button class="button is-light" id="btnDummy" type="button">Dummy</button><br>
+                                非同期体感のためのダミーテキスト<p id='pDummy'></p><br><br>
+                                <input class="input" type="text" placeholder="表示するチャプターを入力" id="chapter"><br>
+                                <button class="button is-link" id="hello" type="button">Ajax</button><br><br>
+                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
-                        </figure>
-                        <div class="media-content">
-                            <div class="content" id="4">
-                                <p><strong>PHPのHello, world</strong><br>
-                                    <a class="button is-link" href="/Users/y_suzuki/development/JavaScript/practice/chapter7/chap7_6_ajax/chap7_6_test.php" target="_blank">php</a><br><br>
-                                    <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                                </p>
-                            </div>
                         </div>
-                    </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content" id="4_1">
+                                <div class="content">
+                                    <p><strong>APIの結果</strong><br>
+                                        <p id="resId"></p>
+                                        <p id="resTitle"></p>
+                                        <p id="resAuthor"></p>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+                <article class="box media">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img src="../img/javascript_logo.png">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content" id="5">
+                            <p><strong>クロスオリジンの制限</strong><br>
+                                XMLHttpRequestオブジェクトでは、セキュリティ上の理由から<br>
+                                異なるオリジンへのアクセスを認めていない。<br>
+                                外部で公開されたサービスにアクセスするためには、クライアントサイドから<br>
+                                外部サービスへアクセスするためのサーバーサイドを呼び出す必要がある。<br><br>
+                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                            </p>
+                        </div>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content" id="4_1">
+                                <div class="content">
+                                    <p><strong>プロキシ</strong><br>
+                                        ※上記のように、クライアントの代わりに外部サービスへアクセスしてくれる<br>
+                                        サーバーサイドのことを<strong>プロキシ</strong>と呼ぶ場合がある。<br><br>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content" id="4_2">
+                                <div class="content">
+                                    <p><strong>クロスオリジン通信の対応</strong><br>
+                                        上記では、<strong>XMLHttpRequestオブジェクトではクロスオリジン通信は不可</strong>と述べたが、<br>
+                                        <strong>最新のXMLHttpRequestオブジェクトではクロスオリジン通信に対応している。</strong><br>
+                                        <font color="red">※ただしサーバー側で明示的に許可するよう設定しておく必要がある。</font><br><br>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+                <article class="box media">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img src="../img/javascript_logo.png">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content" id="6">
+                            <p><strong>JSONP(JSON with Padding)</strong><br>
+                                上記で説明してきた手法の場合、外部サービスにアクセスするためだけに<br>
+                                サーバーサイドを用意しなければならないので手間がかかる。<br>
+                                そういった場合、<strong>&lt;script&gt;要素であれば、外部サーバーからもスクリプトを読み込める</strong>ようにしたものが<br>
+                                <strong>JSONP</strong>である。<br><br>
+                                <input class="input" type="text" placeholder="表示するチャプターを入力" id="url" name="url" value="http://www.wings.msn.to/"><br>
+                                <button class="button is-link" id="btn" type="button">検索</button><br>
+                                <font color="red"><div id="result"></div></font><br><br>
+                                <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                            </p>
+                        </div>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content" id="4_1">
+                                <div class="content">
+                                    <p><strong>&lt;script&gt;要素を生成</strong><br>
+                                        ボタンクリックのタイミングで外部サーバーのスクリプトをインクルードするための&lt;script&gt;要素を<br>
+                                        生成している。<br>
+                                        また、JSONPでは（今回の実例で言うと）クエリパラメーターとして<strong>url</strong>と<strong>コールバック関数</strong><br>
+                                        が新たに必要となる。<br><br>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </article>
             </div>
         </main>
+
+        <script src="chap7_6_ajax.js"></script>
+        <!-- <noscript>はJavaScriptが利用できない場合に行なわれる -->
+        <noscript>JavaScriptが利用できません。</noscript>
     </body>
 </html>

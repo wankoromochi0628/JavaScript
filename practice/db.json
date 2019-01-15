@@ -1,0 +1,47 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "基本的な書き方を身に着ける",
+      "author": "鈴木"
+    },
+    {
+      "id": 3,
+      "title": "基本データを操作する -組みこみオブジェクト-",
+      "author": "上沼"
+    },
+    {
+      "id": 4,
+      "title": "繰り返し利用するコードを１箇所にまとめる -関数-",
+      "author": "上本"
+    },
+    {
+      "id": 5,
+      "title": "大規模開発でも通用する書き方を身につける -オブジェクト指向構文-",
+      "author": "柴田"
+    },
+    {
+      "id": 6,
+      "title": "HTMLやXMLの文書を操作する -DOM(Document Object Model-",
+      "author": "江口"
+    },
+    {
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

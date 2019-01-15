@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "chapter7",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "chap7_1_browserObj/chap7_1_browser.html"
+      }
+    ]
+  }
+}

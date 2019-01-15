@@ -17,7 +17,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">JavaScript　本格入門</h1>
-                        <h2 class="subtitle">サーバー連携でリッチなUIを実装する - Ajax -</h2>
+                        <h2 class="subtitle">非同期処理を簡単に表現する - Promiseオブジェクト -</h2>
                         <h2 class="subtitle">@y_suzuki</h2>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
         <section class="level">
             <div class="level-left">
                 <div class="level-item">
-                    <a class="button is-light" href="../chap7_5_storage/chap7_5_storage.html">Prev</a>
+                    <a class="button is-light" href="../chap7_6_ajax/chap7_6_ajax.html">Prev</a>
                 </div></div>
             <div class="level-right">
                 <div class="level-item tabs">
@@ -70,10 +70,10 @@
                     </p>
                     <ul class="menu-list">
                         <li><a href="#">目次</a></li>
-                        <li><a class="is-active" href="#">サーバー連携でリッチなUIを実装する - Ajax -</a>
+                        <li><a class="is-active" href="#">非同期処理を簡単に表現する -  Promiseオブジェクト -</a>
                             <ul>
-                            <li><a href="#1">Ajaxとは</a></li>
-                            <li><a href="#2">Ajaxの利点</a></li>
+                            <li><a href="#1">非同期処理の問題点</a></li>
+                            <li><a href="#2">Promiseオブジェクトの基本を押さえる</a></li>
                             <li><a href="#3">Ajaxアプリ実装の基本的な手順</a></li>
                             <li><a href="#4">AjaxでWebAPIを呼び出す</a></li>
                             <li><a href="#5">クライアントサイドでクロスオリジン通信を可能にする - JSONP(JSON with Padding) -</a></li>
@@ -94,49 +94,14 @@
                     </figure>
                     <div class="media-content">
                         <div class="content" id="1">
-                            <p><strong>Ajaxとは</strong><br>
-                                <font color="red">Ajax(Asynchronous JavaScript + XML)</font>とは、<br>
-                                <strong>「JavaScriptを利用してサーバーと非同期通信を行い、DOM経由でページに反映する仕組み」</strong><br>
-                                <br><br>
+                            <p><strong>非同期処理の問題点</strong><br>
+                                JavaScriptで非同期処理を実施する場合、古典的なアプローチとしてコールバック関数がある。<br>
+                                しかし、非同期処理がいくつも連なる場合、コールバック関数では入れ子が深くなりすぎて１つの関数が<br>
+                                肥大化するケースがあり、そのような問題を<strong>コールバック地獄</strong>という。<br>
+                                上記のようなケースを解決するのが、<strong>Promiseオブジェクト</strong>の役割になる。<br><br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
-                        <article class="media">
-                                <figure class="media-left">
-                                    <p class="image is-48x48">
-                                        <img src="../img/icon_114780_256.jpg">
-                                    </p>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p><strong>従来型とAjaxの違い</strong><br><br>
-                                        <table is-bordered is-striped is-narrow is-hoverable is-fullwidth>
-                                            <tr>
-                                                <td><b>項目</b></td>
-                                                <td><b>従来型</b></td>
-                                                <td><b>Ajax</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td>サーバー通信時</td>
-                                                <td>同期通信(サーバー処理中クライアントは待ち状態)</td>
-                                                <td><font color="red">非同期通信(サーバー処理中もクライアントは操作可能)</font></td>
-                                            </tr>
-                                            <tr>
-                                                <td>トラフィック</td>
-                                                <td>大(ページ全てのデータを送信応答)</td>
-                                                <td><font color="red">小(更新に必要な情報のみ送信応答)</font></td>
-                                            </tr>
-                                            <tr>
-                                                <td>ページレンダリング</td>
-                                                <td>ページ全体</td>
-                                                <td><font color="red">更新箇所のみ</font></td>
-                                            </tr>
-                                        </table>
-                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
                     </div>
                 </article>
                 <article class="box media">
@@ -147,17 +112,8 @@
                     </figure>
                     <div class="media-content">
                         <div class="content" id="2">
-                            <p><strong>Ajaxの利点</strong><br>
-                                <strong>(1)操作性の改善</strong><br>
-                                ・通信ごとに発生していたページのチラつきを解消<br>
-                                ・サーバー処理中もクライアント側では処理を継続できる<br><br>
-                                <strong>(2)パフォーマンスの向上</strong><br>
-                                ・ページの必要な部分だけを更新するので、通信量を最小限に抑えられる<br>
-                                ・サーバーの処理終了を待つ必要がないので、そもそもの体感速度が向上する<br><br>
-                                <strong>(3)開発生産性／運用性の向上</strong><br>
-                                ・リッチなユーザーインターフェイスをブラウザー標準の技術だけで構築できる（新たな技術を習得<br>
-                                する必要がない）<br>
-                                ・動作に特別なプラグインを必要としないので、導入が容易である<br><br>
+                            <p><strong>Promiseオブジェクトの基本を押さえる</strong><br>
+                                <br><br>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
@@ -317,10 +273,31 @@
                             <p><strong>クロスドキュメントメッセージングによるクロスオリジン通信</strong><br>
                                 <strong>クロスドキュメントメッセージング</strong>とは、異なるウィンドウ／フレームにあるドキュメントでメッセージ<br>
                                 を交換する仕組み。<br><br>
-                                <a href="http://the-zombis.sakura.ne.jp/wp/blog/2013/10/15/post-2031/" class="button is-link" type="button" target="_blank">参考サイト</a><br>
+                                <input class="input" type="text" placeholder="メッセージを入力" id="message" name="message" ><br>
+                                <button class="button is-link" id="btnMessage" type="button">送信</button><br>
+                                <iframe id="frame" src="http://www.wings.msn.to/cross_other.html"
+                                height="200" width="350"></iframe>
                                 <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                             </p>
                         </div>
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="../img/icon_114780_256.jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content" id="6_1">
+                                <div class="content">
+                                    <p><strong></strong><br>
+                                        ボタンクリックのタイミングで外部サーバーのスクリプトをインクルードするための&lt;script&gt;要素を<br>
+                                        生成している。<br>
+                                        また、JSONPでは（今回の実例で言うと）クエリパラメーターとして<strong>url</strong>と<strong>コールバック関数</strong><br>
+                                        が新たに必要となる。<br><br>
+                                        <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </article>
             </div>

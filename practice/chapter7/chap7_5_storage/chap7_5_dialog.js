@@ -5,7 +5,3 @@ window.addEventListener('storage', function(e) {
     console.log('変更後の値；' + e.newValue);
     console.log('発生元のページ；' + e.url);
 }, false);
-
-document.getElementById('update').addEventListener('click', function() {
-
-});

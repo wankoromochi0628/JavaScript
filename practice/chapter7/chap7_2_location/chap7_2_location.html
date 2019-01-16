@@ -99,7 +99,7 @@
                                 ボタンをクリックするなどの動作で、別ページに遷移したり、現在のページをリロードしたい<br>
                                 というような場合に利用するメソッド。<br><br>
                                 ※「補足」欄にlocationオブジェクトで利用可能なプロパティ／メソッドを記載。<br>
-                                <small><a href="#" onclick="reload();">Play</a></small>
+                                <!--<small><a href="#" onclick="reload()">Play</a></small>-->
                             </p>
                         </div>
                         <article class="media">
@@ -272,14 +272,16 @@
                             <div class="content" id="2">
                                 <p><strong>hrefプロパティの実践</strong><br>
                                     <div class='control'>
-                                    <div class='select'>
-                                        <select id="number" name="number">
-                                            <option value="">---遷移ページを選択してください---</option>
-                                            <option value="chap7_1_browserObj/chap7_1_browser.html">1ページ</option>
-                                        </select>
-                                    </div>
+                                    <select class="select is-link" id="isbn" name="isbn">
+                                        <option value="">---書籍名を選択してください---</option>
+                                        <option value="978-4-7741-8030-4">Javaポケットリファレンス</option>
+                                        <option value="978-4-7741-7984-1">Swiftポケットリファレンス</option>
+                                        <option value="978-4-7981-3547-2">独習PHP 第3版</option>
+                                        <option value="978-4-7981-4402-3">独習ASP.NET 第5版</option>
+                                        <option value="978-4-8222-9644-5">アプリを作ろう！</option>
+                                    </select><br>
+                                    <button class="button is-link" id="btn" name="btn" type="button">移動</button>
                                     </div><br>
-                                    <button class="button is-primary" id="btn" type="button" >移動</button><br>
                                     <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
                                 </p>
                             </div>
@@ -292,8 +294,7 @@
                                 <div class="media-content">
                                     <div class="content">
                                         <p><strong>動的にアドレスを変更</strong><br>
-                                            今回の例で言うと<br>
-                                            <font color="red">file:///Users/y_suzuki/development/JavaScript/practice/chapter7/</font><br>
+                                            <font color="red">http://www.wings.msn.to/index.php/-/A-03</font><br>
                                             までの固定文字列の末尾に、リストボックスで選択された値を<br>
                                             動的に付与してlocation.hrefプロパティに渡して画面遷移している。<br>
                                             <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>

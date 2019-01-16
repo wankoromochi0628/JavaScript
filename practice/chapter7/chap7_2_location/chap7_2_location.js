@@ -1,13 +1,11 @@
 // hrefプロパティの実践
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('btn').addEventListener('click', function() {
-        let obj = document.getElementById('number');
-        let val = obj.value;
-        // ファイルサーバー実行時
-        // location.href = 'file:///Users/y_suzuki/development/JavaScript/practice/chapter7/' + val;
+        let val = document.getElementById('isbn').value;
 
         // 200 OK 実行時　（200OKの指定フォルダを chapter07 に指定
-        location.href = 'http://127.0.0.1:8887/' + val;
+        // location.href = 'http://127.0.0.1:8887/' + val;
+        location.href = 'http://www.wings.msn.to/index.php/-/A-03' + val;
     }, false)
 }, false);
 

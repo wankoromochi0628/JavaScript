@@ -6,6 +6,7 @@ document.getElementById('btnDummy').addEventListener('click', function() {
 }, false);
 
 // Ajax
+// JSON Server利用のためコマンドを実行「json-server --watch db.json」
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('hello').addEventListener('click', function() {
         const CHAP = document.getElementById('chapter').value;
@@ -20,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var xhr = new XMLHttpRequest();
 
         // ②サーバー通信時の処理を定義
+        // onreadystatechangeプロパティ
+        // 通信の状態が変化したタイミングで呼び出されるイベントハンドラー
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {

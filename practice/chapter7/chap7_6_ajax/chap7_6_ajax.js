@@ -85,5 +85,3 @@ function show(data) {
         result.appendChild(ul);
     }
 }
-
-// クロスドキュメントメッセージング

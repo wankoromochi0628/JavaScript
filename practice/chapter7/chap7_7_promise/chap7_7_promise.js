@@ -9,10 +9,7 @@ document.getElementById('btn').addEventListener('click', function() {
         // 成功した時に（resolve関数によって）実行される処理
         response => {
             res.textContent = response;
-        },
-        // error => {
-        //     res.textContent = `エラー：${error}`;
-        // }
+        }
     ).catch(
         // 失敗した時に（reject関数によって）実行される処理
         error => {
